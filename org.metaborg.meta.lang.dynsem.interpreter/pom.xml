@@ -176,6 +176,11 @@
 				<artifactId>wagon-http</artifactId>
 				<version>2.10</version>
 			</extension>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				 <artifactId>wagon-ssh-external</artifactId>
+				 <version>1.0-beta-6</version>
+			</extension>
 		</extensions>
 	</build>
 
@@ -215,11 +220,13 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>${deployRepositoryId}</id>
-			<url>http://artifacts.metaborg.org/content/repositories/snapshots/</url>
+			<!--<url>http://artifacts.metaborg.org/content/repositories/snapshots/</url>-->
+			<url>scpexe://maven@fokkema-ict.nl:/srv/http/maven2</url>
 		</snapshotRepository>
 		<repository>
 			<id>${deployRepositoryId}</id>
-			<url>http://artifacts.metaborg.org/content/repositories/releases/</url>
+			<!--<url>http://artifacts.metaborg.org/content/repositories/releases/</url>-->
+			<url>scpexe://maven@fokkema-ict.nl:/srv/http/maven2</url>
 		</repository>
 	</distributionManagement>
 
